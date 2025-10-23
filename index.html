@@ -1,169 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Brock University — Fall Convocation (Meridian Centre)</title>
-<style>
-  :root{
-    --brock-red:#BA0C2F;
-    --bg:#f7f7f7;
-    --text:#222;
-    --card:#f0f0f0;
-    --maxw:1000px;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  }
-  html { scroll-behavior: smooth; }
-  body { margin:0; background:var(--bg); color:var(--text); line-height:1.45; }
-  a.skip-link{ position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden; }
-  a.skip-link:focus{ left:8px; top:8px; width:auto; height:auto; padding:8px 12px; background:#000; color:#fff; z-index:9999; border-radius:4px; text-decoration:none; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brock University Convocation</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #333;
+    }
 
-  /* Logo bar */
-  .logo-bar{ background:#fff; border-bottom:4px solid var(--brock-red); text-align:center; padding:10px 12px; }
-  .logo-bar img{ max-width:320px; height:auto; display:inline-block; }
+    header {
+      background-color: #c10230; /* Brock red */
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
 
-  /* Header */
-  header{ background:var(--brock-red); color:#fff; text-align:center; padding:28px 16px; }
-  header h1{ margin:0; font-size:1.9rem; letter-spacing:0.5px; }
-  header p{ margin:6px 0 0; }
+    main {
+      padding: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-  /* Navigation */
-  nav{ background:#fff; text-align:center; padding:12px 10px; box-shadow: 0 1px 0 rgba(0,0,0,0.04); position:sticky; top:0; z-index:50; }
-  nav a{ margin:0 14px; color:var(--brock-red); font-weight:600; text-decoration:none; font-size:0.95rem; }
-  nav a:focus, nav a:hover{ text-decoration:underline; outline-offset:2px; }
+    h1, h2 {
+      text-align: center;
+      color: #c10230;
+    }
 
-  .wrap{ max-width:var(--maxw); margin:22px auto; padding:0 16px; }
+    .schedule {
+      background: #f7f7f7;
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
 
-  .card{ background:#fff; border-radius:10px; padding:20px; box-shadow: 0 6px 18px rgba(0,0,0,0.03); margin-bottom:20px; }
-  h2{ color:var(--brock-red); margin-top:0; text-align:center; }
-  .schedule{ display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin-top:16px; }
-  .slot{ background:var(--card); padding:18px; border-radius:8px; width:320px; text-align:center; }
-  .slot h3{ margin:0; font-size:1.1rem; color:var(--text); display:flex; align-items:center; gap:6px; }
-  .slot h3::before{ content:"\25CB"; color:var(--brock-red); font-size:1.2rem; } /* Outline circle icon */
-  .slot p{ margin:10px 0 0; font-size:1rem; }
+    .schedule-item {
+      margin: 0.8rem 0;
+      font-size: 1.1rem;
+    }
 
-  .section{ margin-top:50px; }
-  ul{ margin:8px 0 0 1.2rem; }
-  .two-col{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
-  @media (max-width:760px){ .two-col{ grid-template-columns:1fr; } .slot{ width:100%; } }
+    .livestream {
+      text-align: center;
+      margin: 2rem 0;
+    }
 
-  .embed-placeholder{ background:#f4f4f4; border:2px dashed #ddd; border-radius:8px; padding:18px; text-align:center; color:#666; }
+    .livestream a {
+      display: inline-block;
+      background-color: #c10230;
+      color: white;
+      text-decoration: none;
+      padding: 0.8rem 1.2rem;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
 
-  footer{ text-align:center; padding:18px; color:#666; font-size:0.95rem; margin:26px 0; }
-  footer a{ color:var(--brock-red); text-decoration:none; }
-  footer a:hover{text-decoration:underline;}
-</style>
+    .livestream a:hover {
+      background-color: #a00026;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+      padding: 1.5rem 1rem;
+      border-top: 1px solid #ddd;
+    }
+
+    /* Responsive design for phones */
+    @media (max-width: 600px) {
+      header {
+        font-size: 1.4rem;
+        padding: 1.2rem;
+      }
+
+      .schedule-item {
+        font-size: 1rem;
+      }
+
+      .livestream a {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    BROCK UNIVERSITY
+  </header>
 
-<a class="skip-link" href="#maincontent">Skip to main content</a>
+  <main>
+    <h1>Fall Convocation</h1>
+    <h2>Friday, October 24</h2>
 
-<!-- Logo -->
-<div class="logo-bar" role="banner" aria-label="Brock University logo bar">
-  <img src="BROCK-LOGO.png" alt="Brock University horizontal logo">
-</div>
-
-<header>
-  <h1>Fall Convocation — Meridian Centre</h1>
-  <p>St. Catharines, Ontario • <strong>Friday, October 24</strong></p>
-</header>
-
-<!-- Sticky Navigation -->
-<nav aria-label="Primary navigation">
-  <a href="#graduates">Graduates</a>
-  <a href="#guests">Guests</a>
-  <a href="#live-stream">Live Stream</a>
-  <a href="#parking">Parking</a>
-</nav>
-
-<main id="maincontent" tabindex="-1">
-
-  <!-- Schedule -->
-  <div class="wrap">
-    <section class="card" aria-labelledby="schedule-heading">
-      <h2 id="schedule-heading">Event Schedule</h2>
-      <div class="schedule" role="list" aria-label="Ceremony times">
-        <div class="slot" role="listitem">
-          <h3>Morning Ceremony</h3>
-          <p><strong>Starts:</strong> 8:30 AM</p>
-        </div>
-        <div class="slot" role="listitem">
-          <h3>Afternoon Ceremony</h3>
-          <p><strong>Starts:</strong> 2:00 PM</p>
-        </div>
-      </div>
+    <section class="schedule">
+      <div class="schedule-item"><strong>Morning Ceremony:</strong> 8:30 AM</div>
+      <div class="schedule-item"><strong>Afternoon Ceremony:</strong> 2:00 PM</div>
     </section>
 
-    <!-- Venue + Live -->
-    <div class="two-col">
-      <section class="card" aria-labelledby="venue-heading">
-        <h2 id="venue-heading">Venue — Meridian Centre</h2>
-        <p><strong>Address:</strong> 1 David S. Howes Way, St. Catharines, ON L2R 0B3</p>
-        <ul>
-          <li>Downtown St. Catharines location with nearby public parking and transit.</li>
-          <li>Accessible seating and elevators available — ask ushers for assistance.</li>
-          <li>Staff will direct arrivals to check-in and line-up areas.</li>
-        </ul>
-      </section>
-
-      <section class="card" id="live-stream" aria-labelledby="live-heading">
-        <h2 id="live-heading">Watch Live</h2>
-        <div class="embed-placeholder" role="region" aria-label="Live stream placeholder">
-          <p><strong>Live stream will appear here on the day of the ceremony.</strong></p>
-          <pre style="text-align:left; background:#fff; padding:8px; border-radius:6px; overflow:auto;">
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" 
-  title="Brock Convocation Live Stream" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-          </pre>
-        </div>
-      </section>
+    <div class="livestream">
+      <a href="YOUR_YOUTUBE_LIVE_LINK_HERE" target="_blank">Watch the Livestream</a>
     </div>
+  </main>
 
-    <!-- Graduates -->
-    <section class="card section" id="graduates" aria-labelledby="graduates-heading">
-      <h2 id="graduates-heading">Information for Graduates</h2>
-      <ul>
-        <li>Arrive ~1 hour before your ceremony.</li>
-        <li>Entrances: Main (St. Paul St.) or IceDogs Way. Staff will assist.</li>
-        <li>Pick up gowns/hoods prior to entering.</li>
-        <li>Faculty marshals direct line-up areas.</li>
-        <li>Professional photography will capture stage moments.</li>
-      </ul>
-    </section>
-
-    <!-- Guests -->
-    <section class="card section" id="guests" aria-labelledby="guests-heading">
-      <h2 id="guests-heading">Information for Guests</h2>
-      <ul>
-        <li>Doors open: Morning 7:30 AM | Afternoon 1:00 PM</li>
-        <li>Entrances: Either entrance; staff will assist with seating.</li>
-        <li>Accessible seating and elevator access available.</li>
-        <li>Follow venue policy for bags & prohibited items.</li>
-      </ul>
-    </section>
-
-    <!-- Parking -->
-    <section class="card section" id="parking" aria-labelledby="parking-heading">
-      <h2 id="parking-heading">Parking — Nearest Lots & Walking Times</h2>
-      <ul>
-        <li>Meridian Centre surface lots — ~2–5 min walk.</li>
-        <li>Downtown parking garage — ~3–7 min walk.</li>
-        <li>On-street metered parking — ~2–10 min walk.</li>
-        <li>Accessible drop-off/pick-up available at main entrance.</li>
-      </ul>
-    </section>
-
-    <!-- Contact -->
-    <section class="card section" aria-labelledby="contact-heading">
-      <h2 id="contact-heading">Contact</h2>
-      <p>Questions about attending Convocation? Email: <a href="mailto:futurestudent@brocku.ca">futurestudent@brocku.ca</a></p>
-    </section>
-  </div>
-
-</main>
-
-<footer role="contentinfo">
-  <p>© Brock University • Fall Convocation</p>
-</footer>
-
+  <footer>
+    For questions, contact: <a href="mailto:futurestudent@brocku.ca">futurestudent@brocku.ca</a>
+  </footer>
 </body>
 </html>
